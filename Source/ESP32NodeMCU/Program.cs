@@ -25,6 +25,8 @@ namespace ESP32NodeMCU
 {
   using System.Diagnostics;
   using System.Threading;
+  using Display.SSD1306;
+  using nanoFramework.Hardware.Esp32;
   using Windows.Devices.WiFi;
 
   /// <summary>
@@ -35,21 +37,42 @@ namespace ESP32NodeMCU
     /// <summary>
     /// Entry method of the application.
     /// </summary>
-    public static void Main()
+    public static void Main() => new Program().Run();
+
+    /// <summary>
+    /// Instance method for the application start.
+    /// </summary>
+    private void Run()
     {
+      this.InitializePortPins();
+
       WiFiAdapter[] adapters = WiFiAdapter.FindAllAdapters();
       if (adapters.Length == 1)
       {
         WiFiAdapter adapter = adapters[0];
-        adapter.AvailableNetworksChanged += Adapter_AvailableNetworksChanged;
+        adapter.AvailableNetworksChanged += this.WiFiAdapter_AvailableNetworksChanged;
         adapter.ScanAsync();
       }
 
-      Thread.Sleep(Timeout.Infinite);
+      SSD1306_Display display = new SSD1306_Display(1, 0x79);
+      display.Initialize();
+      display.ClearScreen();
+      while (true)
+      {
+        display.DrawText(0, 0, "Test");
+        display.Write();
+        Thread.Sleep(1000);
+      }
+    }
 
-      // Browse our samples repository: https://github.com/nanoframework/samples
-      // Check our documentation online: https://docs.nanoframework.net/
-      // Join our lively Discord community: https://discord.gg/gCyBu8T
+    /// <summary>
+    /// Initializes the port pins of the device.
+    /// </summary>
+    private void InitializePortPins()
+    {
+      // I2C pins for the Display
+      Configuration.SetPinFunction(Gpio.IO21, DeviceFunction.I2C1_DATA);
+      Configuration.SetPinFunction(Gpio.IO22, DeviceFunction.I2C1_CLOCK);
     }
 
     /// <summary>
@@ -57,7 +80,7 @@ namespace ESP32NodeMCU
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The event arguments.</param>
-    private static void Adapter_AvailableNetworksChanged(WiFiAdapter sender, object e)
+    private void WiFiAdapter_AvailableNetworksChanged(WiFiAdapter sender, object e)
     {
       Debug.WriteLine(string.Empty);
       WiFiAvailableNetwork[] networks = sender.NetworkReport.AvailableNetworks;

@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "ESP32NodeMCU", "ESP32NodeMCU\ESP32NodeMCU.nfproj", "{36871FBB-1B80-48F5-9126-1FF18464027A}"
 EndProject
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "Display", "Display\Display.nfproj", "{5A195774-CA08-43DC-8E43-FF02C85E83D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,12 @@ Global
 		{36871FBB-1B80-48F5-9126-1FF18464027A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36871FBB-1B80-48F5-9126-1FF18464027A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{36871FBB-1B80-48F5-9126-1FF18464027A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5A195774-CA08-43DC-8E43-FF02C85E83D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A195774-CA08-43DC-8E43-FF02C85E83D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A195774-CA08-43DC-8E43-FF02C85E83D6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5A195774-CA08-43DC-8E43-FF02C85E83D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A195774-CA08-43DC-8E43-FF02C85E83D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A195774-CA08-43DC-8E43-FF02C85E83D6}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

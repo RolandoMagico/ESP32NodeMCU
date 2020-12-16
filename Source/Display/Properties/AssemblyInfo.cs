@@ -27,11 +27,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ESP32NodeMCU")]
+[assembly: AssemblyTitle("Display")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ESP32NodeMCU")]
+[assembly: AssemblyProduct("Display")]
 [assembly: AssemblyCopyright("Copyright © ")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -53,3 +53,9 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+
+/////////////////////////////////////////////////////////////////
+// This attribute is mandatory when building Interop libraries //
+// update this whenever the native assembly signature changes  //
+[assembly: AssemblyNativeVersion("1.0.0.0")]
+/////////////////////////////////////////////////////////////////
