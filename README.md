@@ -1,5 +1,5 @@
 # ESP32NodeMCU
-Playground for nanoframework with ESP32 NodeMCU using an ESP32 NodeMCU Module WLAN WiFi Development Board from AZ delivery.
+Playground for nanoframework with ESP32 using an ESP32 NodeMCU Module WLAN WiFi Development Board from AZ delivery.
 
 # Getting Started
 Open the Package Manager Console in Visual Studio (View > Other Windows > Package Manager Console) and run the following commands:
