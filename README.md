@@ -1,2 +1,10 @@
 # ESP32NodeMCU
 Playground for nanoframework with ESP32 NodeMCU using an ESP32 NodeMCU Module WLAN WiFi Development Board from AZ delivery.
+
+# Getting Started
+Open the Package Manager Console in Visual Studio (View > Other Windows > Package Manager Console) and run the following commands:
+```
+dotnet tool install -g nanoFirmwareFlasher
+dotnet tool update -g nanoFirmwareFlasher
+nanoff --update --target ESP32_WROOM_32 --serialport COM4 --fwversion 1.6.1-preview.3
+```
