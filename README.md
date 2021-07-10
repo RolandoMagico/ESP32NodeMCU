@@ -7,5 +7,5 @@ Open the Package Manager Console in Visual Studio (View > Other Windows > Packag
 ```
 dotnet tool install -g nanoFirmwareFlasher
 dotnet tool update -g nanoFirmwareFlasher
-nanoff --update --target ESP32_WROOM_32 --serialport COM4 --fwversion 1.6.1-preview.3
+nanoff --update --target ESP32_WROOM_32 --serialport COM3 --fwversion 1.6.5-preview.429
 ```
